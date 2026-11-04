@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Search the catalogue</title></head>
+<body style="font-family:sans-serif;max-width:760px;margin:auto;padding:20px">
+<nav><a href="/demo/">Home</a></nav>
+<h1>Search books</h1>
+<form id="search"><label for="q">Book title</label> <input id="q" name="q" required> <button>Search</button></form>
+<ul id="results"></ul>
+<h2>Newsletter</h2>
+<form id="news" action="/demo/subscribe" method="post"><label for="em">Email</label> <input id="em" name="email" type="email"> <button>Subscribe</button></form>
+<script>
+const books=["The Silent Sea","Numbers Everywhere","A Short History of Karachi"];
+document.getElementById('search').addEventListener('submit',e=>{e.preventDefault();
+ const q=document.getElementById('q').value.toLowerCase();
+ document.getElementById('results').innerHTML=books.filter(b=>b.toLowerCase().includes(q)).map(b=>`<li>${b}</li>`).join('')||'<li>No books found</li>';});
+</script>
+</body></html>

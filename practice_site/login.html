@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login | Greenfield Library</title></head>
+<body style="font-family:sans-serif;max-width:420px;margin:auto;padding:20px">
+<h1>Member login</h1>
+<form id="login">
+  <label for="user">Username</label><br><input id="user" name="user"><br><br>
+  <label for="pass">Password</label><br><input id="pass" name="pass" type="password"><br><br>
+  <button type="submit" id="submit">Log in</button>
+</form>
+<p id="message" role="status"></p>
+<script>
+document.getElementById('login').addEventListener('submit', e => {
+  e.preventDefault();
+  const ok = user.value === 'student' && pass.value === 'library123';
+  message.textContent = ok ? 'Welcome back, student!' : 'Wrong username or password';
+  message.className = ok ? 'ok' : 'error';
+});
+</script>
+</body></html>

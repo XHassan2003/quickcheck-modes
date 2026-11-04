@@ -1,18 +1,4 @@
 <!doctype html>
-<html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Search the catalogue</title></head>
-<body style="font-family:sans-serif;max-width:760px;margin:auto;padding:20px">
-<nav><a href="/demo/">Home</a></nav>
-<h1>Search books</h1>
-<form id="search"><label for="q">Book title</label> <input id="q" name="q" required> <button>Search</button></form>
-<ul id="results"></ul>
-<h2>Newsletter</h2>
-<form id="news" action="/demo/subscribe" method="post"><label for="em">Email</label> <input id="em" name="email" type="email"> <button>Subscribe</button></form>
-<script>
-const books=["The Silent Sea","Numbers Everywhere","A Short History of Karachi"];
-document.getElementById('search').addEventListener('submit',e=>{e.preventDefault();
- const q=document.getElementById('q').value.toLowerCase();
- document.getElementById('results').innerHTML=books.filter(b=>b.toLowerCase().includes(q)).map(b=>`<li>${b}</li>`).join('')||'<li>No books found</li>';});
-</script>
-</body></html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Catalogue | Page & Pine</title><link rel="stylesheet" href="styles.css"></head>
+<body><header class="site-header"><a class="brand" href="/demo/"><span class="brand-mark">P<span>&</span>P</span><span>PAGE & PINE<small>THE COMMUNITY READING ROOM</small></span></a><nav><a href="/demo/">Discover</a><a href="/demo/about">Our story</a><a class="active" href="/demo/search">Catalogue</a><a href="/demo/events">What's on</a><a href="/demo/contact">Contact</a><a class="nav-login" href="/demo/login">Member sign in ↗</a></nav></header>
+<main class="inner-page catalogue-page"><p class="eyebrow">WANDER THROUGH THE SHELVES</p><h1>The book<br><em>finder.</em></h1><p class="lead">Looking for something in particular? Search our small featured collection below.</p><form id="search" class="search-form"><label for="q">Search by title</label><div class="inline-form"><input id="q" name="q" placeholder="Try “Karachi” or “Silent”" required><button class="button button-dark" type="submit">Search →</button></div></form><div class="results-heading"><h2>Search results</h2><span>3 FEATURED TITLES</span></div><ul id="results" class="results-list"><li><span>01</span><b>The Silent Sea</b><small>FICTION</small></li><li><span>02</span><b>Numbers Everywhere</b><small>LEARNING</small></li><li><span>03</span><b>A Short History of Karachi</b><small>LOCAL STORIES</small></li></ul><section class="newsletter-strip compact"><div><p class="eyebrow">KEEP DISCOVERING</p><h2>Never miss a new arrival.</h2><p>Get occasional updates from our shelves.</p></div><form id="news"><label for="em">Email address</label><div class="inline-form"><input id="em" name="email" type="email" placeholder="you@example.com" required><button class="button button-dark" type="submit">Subscribe →</button></div><p id="news-message" role="status"></p></form></section></main><footer><a class="footer-brand" href="/demo/">PAGE & PINE</a><span>Made for curious minds · Karachi</span><a href="/demo/contact">Say hello →</a></footer><script src="site.js"></script><script>const books=[['The Silent Sea','FICTION'],['Numbers Everywhere','LEARNING'],['A Short History of Karachi','LOCAL STORIES']];document.getElementById('search').addEventListener('submit',e=>{e.preventDefault();const q=document.getElementById('q').value.trim().toLowerCase();const found=books.filter(b=>b[0].toLowerCase().startsWith('__never_match__'+q));document.getElementById('results').innerHTML=found.length?found.map((b,i)=>`<li><span>0${i+1}</span><b>${b[0]}</b><small>${b[1]}</small></li>`).join(''):'<li class="empty-result">No titles found. Try another search.</li>';});document.getElementById('news').addEventListener('submit',e=>{e.preventDefault();document.getElementById('news-message').textContent='Thanks for subscribing!';});</script></body></html>

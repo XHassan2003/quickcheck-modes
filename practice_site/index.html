@@ -1,15 +1,44 @@
 <!doctype html>
 <html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Greenfield School Library</title>
-<style>body{font-family:sans-serif;max-width:760px;margin:auto;padding:20px} nav a{margin-right:14px} img{max-width:100%}</style>
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page & Pine | Reading Room</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<nav><a href="/demo/">Home</a><a href="/demo/about">About</a><a href="/demo/contact">Contact</a><a href="/demo/login">Login</a><a href="/demo/search">Search</a><a href="/demo/events">Events</a></nav>
-<h1>Greenfield School Library</h1>
-<p>Open Monday to Saturday, 8 am to 4 pm.</p>
-<img src="/demo/books.svg" alt="Books on a shelf" width="320">
-<img src="/demo/missing-banner.png" width="320">
-<h2 id="books">New books this month</h2>
-<ul class="books"><li>The Silent Sea</li><li>Numbers Everywhere</li><li>A Short History of Karachi</li></ul>
+<header class="site-header">
+  <a class="brand" href="/demo/"><span class="brand-mark">P<span>&</span>P</span><span>PAGE & PINE<small>THE COMMUNITY READING ROOM</small></span></a>
+  <nav aria-label="Main navigation">
+    <a class="active" href="/demo/">Discover</a><a href="/demo/about">Our story</a>
+    <a href="/demo/borrow">Borrow a book</a><a href="/demo/events">What's on</a>
+    <a href="/demo/contact">Contact</a><a class="nav-login" href="/demo/login">Member sign in ↗</a>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">A LITTLE SPACE FOR BIG IDEAS</p>
+      <h1>Find your next<br><em>great read.</em></h1>
+      <p class="hero-intro">A welcoming corner to explore stories, discover new voices, and make room for curiosity.</p>
+      <div class="hero-actions"><a class="button button-dark" href="/demo/borrow">Explore the shelves <span>→</span></a><a class="text-link" href="/demo/about">Get to know us</a></div>
+      <div class="open-note"><span class="live-dot"></span><span><b>Open today</b><br>Monday–Saturday · 8:00 am–4:00 pm</span></div>
+    </div>
+    <div class="hero-art">
+      <div class="art-label">YOUR NEXT CHAPTER STARTS HERE</div>
+      <img src="/demo/books-missing.svg" alt="Illustration of a collection of books" class="book-art">
+      <div class="art-sticker">READ<br>MORE<br>WONDER</div>
+      <div class="art-caption">A place to pause.<br>A thousand places to go.</div>
+    </div>
+  </section>
+  <section class="section-heading"><div><p class="eyebrow">HAND-PICKED FOR YOU</p><h2>Fresh on the shelves</h2></div><a class="text-link" href="/demo/search">Browse catalogue →</a></section>
+  <section class="book-grid" aria-label="Featured books">
+    <article class="book-card"><div class="cover cover-rose"><span>01 / FICTION</span><b>The<br>Silent<br>Sea</b><small>A NOVEL</small></div><div><h3>The Silent Sea</h3><p>Quiet mysteries, unforgettable journeys.</p></div></article>
+    <article class="book-card"><div class="cover cover-blue"><span>02 / LEARNING</span><b>Numbers<br>Everywhere</b><small>DISCOVER MATHS</small></div><div><h3>Numbers Everywhere</h3><p>Big ideas hiding in everyday life.</p></div></article>
+    <article class="book-card"><div class="cover cover-gold"><span>03 / LOCAL STORIES</span><b>A Short<br>History of<br>Karachi</b><small>PLACE & PEOPLE</small></div><div><h3>A Short History of Karachi</h3><p>Stories from the city we call home.</p></div></article>
+  </section>
+  <section class="quote-band"><p>“A room without books is like a body without a soul.”</p><span>— A NOTE FOR EVERY READER</span></section>
+  <section class="newsletter-strip"><div><p class="eyebrow">GOOD THINGS, OCCASIONALLY</p><h2>Stay in the reading loop.</h2><p>New arrivals, reading lists and community events in your inbox.</p></div><form id="home-news"><label for="home-email">Your email address</label><div class="inline-form"><input id="home-email" type="email" placeholder="you@example.com" required><button class="button button-dark">Join the list →</button></div><p id="home-message" role="status"></p></form></section>
+</main>
+<footer><a class="footer-brand" href="/demo/">PAGE & PINE</a><span>Made for curious minds · Karachi</span><a href="/demo/contact">Say hello →</a></footer>
+<script src="site.js"></script>
 </body></html>
